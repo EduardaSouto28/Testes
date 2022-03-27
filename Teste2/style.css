@@ -1,0 +1,23 @@
+*{
+    color: rgb(0, 0, 0);
+}
+
+body{
+    background: rgb(212, 212, 212); 
+}
+
+input{
+    background: rgb(243, 235, 232);
+    border-radius: 20px;
+    border-color: black;
+}
+
+button{
+    background:rgb(61, 185, 61);
+    border-radius: 20px;
+    border-color: black;
+}
+
+#lista button{
+    background: rgb(185, 55, 55);
+}
