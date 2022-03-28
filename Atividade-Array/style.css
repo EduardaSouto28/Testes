@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(247, 240, 231);
+}
+
+input{
+    border-radius: 5px;
+    border-width: 0.5px;
+    border-color: black;
+    
+}
+
+button{
+    border-radius: 5px;
+    border-width: 0.5px;
+}
