@@ -1,1 +1,1 @@
-alert("olá visitante");
+alert("Olá, visitante!");

@@ -5,7 +5,7 @@ function alertNome(){
     if(nome.value==""){
        alert("Digite um nome no campo");
     }else{
-        alert("olá " + nome.value);
+        alert("Olá, " + nome.value);
     }
 }
 

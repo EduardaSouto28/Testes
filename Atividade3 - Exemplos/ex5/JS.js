@@ -6,7 +6,7 @@ function alertNome(){
     if(nome.value=="" || sobrenome.value==""){
        alert("Digite no campo");
     }else{
-        alert("olá " + nome.value + " " + sobrenome.value);
+        alert("Olá, " + nome.value + " " + sobrenome.value);
     }
 }
 
