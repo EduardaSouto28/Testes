@@ -85,17 +85,18 @@ function calcular(){
         resultado= parseInt(real/dezC);
         notas.innerHTML+= resultado + " moedas de R$0.10"+ "\n";
         real-=resultado*dezC;
+        console.log(real);
     }
 
     if(real>=cincoC){
         resultado= parseInt(real/cincoC);
-        notas.innerHTML+= resultado + " moedas de R$0.5"+ "\n";
+        notas.innerHTML+= resultado + " moedas de R$0.05"+ "\n";
         real-=resultado*cincoC;
     }
 
     if(real>=umC){
         resultado= parseInt(real/umC);
-        notas.innerHTML+= resultado + " moedas de R$0.1"+ "\n";
+        notas.innerHTML+= resultado + " moedas de R$0.01"+ "\n";
         real-=resultado*umC;
     }
 

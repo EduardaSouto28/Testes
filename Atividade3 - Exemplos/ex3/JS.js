@@ -1,10 +1,11 @@
 
 
 do{
-    const nome = prompt("Digite seu nome");
-}
-while(nome.value == ""){
-    nome = prompt("Digite seu nome");
-};
+    var nome = prompt("Digite seu nome");
+    if(nome){
+        alert("Olá, " + nome);
+    }
+}while(nome == "");
+
 
 

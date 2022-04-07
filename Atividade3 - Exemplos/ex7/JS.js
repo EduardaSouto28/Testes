@@ -9,6 +9,7 @@ function calculos (){
     let div= num1.value / num2.value;
     let mult= num1.value * num2.value;
     let pot= num1.value**num2.value;
+    resultados.innerHTML="";
 
     resultados.innerHTML+= num1.value + "+"+ num2.value + " = " + soma + "\n";
     resultados.innerHTML+= num1.value + "-"+ num2.value + " = " + sub + "\n";
