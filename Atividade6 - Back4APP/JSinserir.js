@@ -10,29 +10,30 @@ const div = document.getElementById("div");
 const inputDescri = document.getElementById("adicTarefa");
 const btnInserir = document.getElementById("inserir");
 
-
-
 function gerarLista() {
   div.innerHTML = "";
   for (let i = 0; i < vetTarefa.length; ++i) {
-    // lista.innerHTML += `<li>${i}</li>`;
+
     const li = document.createElement("li");
+
     const check = document.createElement("input");
     check.type = "checkbox";
+    check.setAttribute("id", "check");
+
     const btnRemover = document.createElement("button");
     btnRemover.innerHTML = 'Remover';
-    btnRemover.id = "btn";
+    btnRemover.setAttribute("id", "btn");
+
     const txt = document.createTextNode(
       `${vetTarefa[i].Descricao}`
     );
+    
     li.appendChild(txt);
     div.appendChild(li);
     li.appendChild(check);
     li.appendChild(btnRemover);
   }
 }
-
-const check=check.innerHTML;
 
 const lista = async () => {
   const Tarefa = Parse.Object.extend('Tarefa');
@@ -66,11 +67,11 @@ const inserir = async () => {
   }
 };
 
-
-
 btnInserir.onclick = inserir;
 lista();
 gerarLista();
+
+
 
 
 
