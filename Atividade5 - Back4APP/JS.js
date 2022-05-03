@@ -6,6 +6,7 @@ const lista = document.getElementById("lista");
 const inputNome = document.getElementById("inputNome");
 const inputOrigem = document.getElementById("inputOrigem");
 const inputEmpresa = document.getElementById("inputEmpresa");
+const inputAno = document.getElementById("inputAno");
 const btn= document.getElementById("btnInserir");
 
 
@@ -14,7 +15,7 @@ function gerarLista() {
   for (let i = 0; i < vetPersonagens.length; ++i) {
     const li = document.createElement("li");
     const txt = document.createTextNode(
-      `Nome: ${vetPersonagens[i].Nome}  ---- Origem: ${vetPersonagens[i].Origem}  ----  Empresa: ${vetPersonagens[i].Empresa}`
+      `Nome: ${vetPersonagens[i].Nome} || Ano de criação: ${vetPersonagens[i].AnoCria} || Origem: ${vetPersonagens[i].Origem}  ||  Empresa: ${vetPersonagens[i].Empresa}`
     );
     li.appendChild(txt);
     lista.appendChild(li);
@@ -31,7 +32,8 @@ const gerar = async () => {
       const Nome = object.get("Nome")
       const Empresa = object.get("Empresa")
       const Origem = object.get("Origem")
-      vetPersonagens.push({Nome, Empresa, Origem});
+      const AnoCria= object.get("AnoCria");
+      vetPersonagens.push({Nome, Empresa, AnoCria, Origem});
     }
     gerarLista();
   } catch (error) {
@@ -43,8 +45,10 @@ const gerar = async () => {
 const inserir = async () => {
   const myNewObject = new Parse.Object('Personagens');
   myNewObject.set('Nome', inputNome.value);
+  myNewObject.set('AnoCria', Number(inputAno.value));
   myNewObject.set('Empresa', inputEmpresa.value);
   myNewObject.set('Origem', inputOrigem.value);
+
   try {
     const result = await myNewObject.save();
     console.log('Personagens created', result);
