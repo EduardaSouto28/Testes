@@ -1,0 +1,33 @@
+#box{
+    align-items: center;
+    width: 700px;
+    margin-left: 25%;
+    margin-top: 10%;
+    padding: 35px;
+    border: 0.5px solid rgb(65, 65, 65);
+    background-color: rgb(182, 169, 156);
+	box-shadow: 0px 0px 30px rgba(30, 30, 30, 0.77);
+}
+
+#center{
+    font-size: 150%;
+    text-align: center;
+}
+
+li{
+    padding: 8px;
+}
+
+#check{
+    min-width: 30px;
+    min-height: 15px;
+    margin-right: 5px;
+}
+
+#btn{
+    height: 20px;
+}
+
+body{
+    background-color: rgb(76, 27, 27);
+}
