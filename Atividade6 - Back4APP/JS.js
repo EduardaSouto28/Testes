@@ -21,6 +21,7 @@ function gerarLista() {
     const txt = document.createTextNode(
       `${vetTarefa[i].get("Descricao")}`
     );
+    txt.id= "txt";
 
     const check = document.createElement("input");
     check.type = "checkbox";
@@ -29,13 +30,13 @@ function gerarLista() {
     check.onclick = (evt) => checkTarefa(evt, vetTarefa[i]);
 
     const btnRemover = document.createElement("button");
-    btnRemover.innerHTML = 'Remover';
+    btnRemover.innerHTML = 'REMOVER';
     btnRemover.id = "btn";
     btnRemover.onclick = (evt2) => removeTarefa(evt2, vetTarefa[i]);
 
+    li.appendChild(check);
     li.appendChild(txt);
     div.appendChild(li);
-    li.appendChild(check);
     li.appendChild(btnRemover);
   }
 }
