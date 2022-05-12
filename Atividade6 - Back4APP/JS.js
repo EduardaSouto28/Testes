@@ -27,7 +27,7 @@ function gerarLista() {
     check.type = "checkbox";
     check.id = "check";
     check.checked = vetTarefa[i].get("Concluido");
-    check.onclick = (evt) => checkTarefa(evt, vetTarefa[i]);
+    check.onclick = (evt) => checkTarefa(evt, vetTarefa[i], txt);
 
     const btnRemover = document.createElement("button");
     btnRemover.innerHTML = 'REMOVER';
@@ -68,7 +68,7 @@ const inserir = async () => {
   }
 };
 
-const checkTarefa = async (evt, tarefa) => {
+const checkTarefa = async (evt, tarefa, txt) => {
   tarefa.set('Concluido', evt.target.checked);
   try {
     const response = await tarefa.save();
