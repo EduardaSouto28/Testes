@@ -21,21 +21,23 @@ function gerarLista() {
     const txt = document.createTextNode(
       `${vetTarefa[i].get("Descricao")}`
     );
-    txt.id= "txt";
+    const div2 = document.createElement("div");
+    div2.className = "semRisco"
 
     const check = document.createElement("input");
     check.type = "checkbox";
     check.id = "check";
     check.checked = vetTarefa[i].get("Concluido");
-    check.onclick = (evt) => checkTarefa(evt, vetTarefa[i], txt);
+    check.onclick = (evt) => checkTarefa(evt, vetTarefa[i], div2);
 
     const btnRemover = document.createElement("button");
     btnRemover.innerHTML = 'REMOVER';
-    btnRemover.id = "btn";
+    btnRemover.className = "btn";
     btnRemover.onclick = (evt2) => removeTarefa(evt2, vetTarefa[i]);
 
     li.appendChild(check);
-    li.appendChild(txt);
+    div2.appendChild(txt);
+    li.appendChild(div2);
     div.appendChild(li);
     li.appendChild(btnRemover);
   }
@@ -68,8 +70,15 @@ const inserir = async () => {
   }
 };
 
-const checkTarefa = async (evt, tarefa, txt) => {
+const checkTarefa = async (evt, tarefa, div2) => {
   tarefa.set('Concluido', evt.target.checked);
+
+  if(evt.target.checked){
+    div2.className = "risco";
+  }else{
+    div2.className = "semRisco"
+  }
+
   try {
     const response = await tarefa.save();
     console.log(response.get('Concluido'));

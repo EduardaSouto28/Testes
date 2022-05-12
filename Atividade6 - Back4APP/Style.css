@@ -28,38 +28,50 @@ body,html {
 }
 
 
+
+
 li {
     padding-top: 20px;
     color: rgb(213, 210, 210);
-    text-align: right;
-    text-align: left;
-    margin-left: 115px;
 }
 
 #check {
-    margin-right: 10px;
+    margin-inline:70px 10px;
 }
 
-#btn {
+.risco, .semRisco{
+    margin-inline: 100px 300px;
+    margin-top: -24px;
+}
+
+.risco{
+    text-decoration: line-through;
+}
+
+.btn {
     width: 100px;
     height: 25px;
+    padding: 0px 0px 0px;
+    margin-top: -100px;
+    margin-inline: 500px 10px;
     border-color: rgba(255, 255, 255, 0.886);
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.768);
     text-align: center;
-    margin-inline: 255px 30px;
     box-shadow: 0px 0px 2px rgb(121, 121, 121);
 }
 
 
+
+
 #adicTarefa {
-    width: 400px;
+    width: 300px;
     height: 20px;
     border-color: rgb(169, 169, 169);
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.768);
     font-style: italic;
-    margin-inline: 15% 24px;
+    margin-inline: 20% 24px;
 }
 
 input::placeholder {
