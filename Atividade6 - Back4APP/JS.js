@@ -16,7 +16,8 @@ function gerarLista() {
   div.innerHTML = "";
   for (let i = 0; i < vetTarefa.length; ++i) {
 
-    const li = document.createElement("li");
+    const divContainer = document.createElement("div");
+    divContainer.className = "container"
 
     const txt = document.createTextNode(
       `${vetTarefa[i].get("Descricao")}`
@@ -31,15 +32,14 @@ function gerarLista() {
     check.onclick = (evt) => checkTarefa(evt, vetTarefa[i], div2);
 
     const btnRemover = document.createElement("button");
-    btnRemover.innerHTML = 'REMOVER';
-    btnRemover.className = "btn";
+    btnRemover.className= "fa fa-trash"
     btnRemover.onclick = (evt2) => removeTarefa(evt2, vetTarefa[i]);
 
-    li.appendChild(check);
+    divContainer.appendChild(check);
     div2.appendChild(txt);
-    li.appendChild(div2);
-    div.appendChild(li);
-    li.appendChild(btnRemover);
+    divContainer.appendChild(div2);
+    divContainer.appendChild(btnRemover);
+    div.appendChild(divContainer);
   }
 }
 
@@ -73,9 +73,9 @@ const inserir = async () => {
 const checkTarefa = async (evt, tarefa, div2) => {
   tarefa.set('Concluido', evt.target.checked);
 
-  if(evt.target.checked){
+  if (evt.target.checked) {
     div2.className = "risco";
-  }else{
+  } else {
     div2.className = "semRisco"
   }
 
@@ -102,9 +102,6 @@ const removeTarefa = async (evt2, tarefa) => {
 btnInserir.onclick = inserir;
 lista();
 gerarLista();
-
-
-
 
 
 
